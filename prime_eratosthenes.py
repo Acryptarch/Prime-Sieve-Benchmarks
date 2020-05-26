@@ -2,13 +2,14 @@ import math
 import timeit
 import numpy as np
 
+
 def convert(bool_list):
     """Helper method that converts a boolean list of prime numbers (index is value and bool value determines
     primality) into an integer list that is easier to process"""
     return [i for i in range(2, len(bool_list)) if bool_list[i]]
 
 
-test_val = 10 ** 6 # Modify this variable to change the values inputted in the benchmark method.
+test_val = 10 ** 6  # Modify this variable to change the values inputted in the benchmark method.
 
 
 def benchmark(method_list, repeat=1):
@@ -21,7 +22,7 @@ def benchmark(method_list, repeat=1):
     collection = {}
 
     for val in method_list:
-        collection[val.__name__] = round((((timeit.timeit(stmt=val, number=repeat)) / repeat) * 1000), 2) #average->ms
+        collection[val.__name__] = round((((timeit.timeit(stmt=val, number=repeat)) / repeat) * 1000), 2)  # average->ms
 
     sorted_times = [(k, collection[k]) for k in sorted(collection, key=collection.get, reverse=False)]
 
@@ -205,18 +206,12 @@ def npprime_sieve3c(limit=test_val):
     return 2 * np.nonzero(prime)[0][1::] + 1
 
 
-def main():
-    # Methods in this list are called and automatically benchmarked. The value being tested can be modified by
-    # changing the test_val variable above the benchmark definition. Increasing the repeat variable will return a
-    # more precise average but will take longer to run. Test your own methods by adding them to the prime_methods
-    # list below. Make sure the method's default value is set to test_value.
+# Methods in this list are called and automatically benchmarked. The value being tested can be modified by
+# changing the test_val variable above the benchmark definition. Increasing the repeat variable will return a
+# more precise average but will take longer to run. Test your own methods by adding them to the prime_methods
+# list below. Make sure the method's default value is set to test_value.
 
-    prime_methods = [prime_sieve1a, prime_sieve1b, npprime_sieve1c, prime_sieve2a, prime_sieve2b,
-                     prime_sieve2c, npprime_sieve2d, prime_sieve2e, prime_sieve3a, prime_sieve3b, npprime_sieve3c]
+prime_methods = [prime_sieve1a, prime_sieve1b, npprime_sieve1c, prime_sieve2a, prime_sieve2b,
+                 prime_sieve2c, npprime_sieve2d, prime_sieve2e, prime_sieve3a, prime_sieve3b, npprime_sieve3c]
 
-    benchmark(method_list=prime_methods, repeat=1)
-
-
-
-if __name__ == '__main__':
-    main()
+benchmark(method_list=prime_methods, repeat=1)
