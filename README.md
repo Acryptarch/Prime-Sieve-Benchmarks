@@ -1,2 +1,2 @@
 # Prime Sieve Benchmarker
-I got scammed. No you didn't. Pysch
+So who should I put this into words? Maybe I should just give up thats a good step.
