@@ -1,2 +1,2 @@
 #Prime Sieve Benchmarker
-I got scammed. No you didn't
+I got scammed. No you didn't. Pysch
