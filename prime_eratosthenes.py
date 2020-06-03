@@ -11,7 +11,6 @@ def convert(bool_list):
 
 test_val = 10 ** 6  # Modify this variable to change the values inputted in the benchmark method.
 
-
 def benchmark(method_list, repeat=1):
     """Given a list of methods that return a list of prime numbers up to a given number, the method prints out the
     time for each method to run and ranks them. The time is measured by using the timeit function from the time it
@@ -19,6 +18,7 @@ def benchmark(method_list, repeat=1):
     multiple times which results in a more precise average. The value inputted into each method can be modified by
     changing test_val"""
     print("Benchmark with input of " + str(test_val))
+    print("Each method is repeated " + str(repeat) + " times")
     collection = {}
 
     for val in method_list:
@@ -213,5 +213,3 @@ def npprime_sieve3c(limit=test_val):
 
 prime_methods = [prime_sieve1a, prime_sieve1b, npprime_sieve1c, prime_sieve2a, prime_sieve2b,
                  prime_sieve2c, npprime_sieve2d, prime_sieve2e, prime_sieve3a, prime_sieve3b, npprime_sieve3c]
-
-benchmark(method_list=prime_methods, repeat=1)
