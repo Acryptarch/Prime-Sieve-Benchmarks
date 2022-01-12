@@ -1,5 +1,5 @@
 # Prime Sieve Benchmarker
-The purpose of this project is to benchmark and time variations of the Sieve of Erasthoneses. It uses many methods including but not limited to list slicing, vectorization, and a speed up array operations with the use of numpy
+The purpose of this project is to benchmark and measure different time variations of the Sieve of Erasthoneses. It uses many methods including but not limited to list slicing, vectorization, and a speed up array operations with the use of numpy
 
 ## Requirements
 - Python 3.6+
